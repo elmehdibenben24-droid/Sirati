@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سيرتي – منشئ السيرة الذاتية ورسائل التحفيز بالعربية</title>
+<meta name="description" content="أنشئ سيرة ذاتية عربية متوافقة مع أنظمة الفرز (ATS) ورسالة تحفيز للقبول الجامعي أو المنحة أو الوظيفة، وحمّلها PDF مجاناً. بياناتك تبقى في متصفحك.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16243a;--mute:#5b6778;--bg:#eceff4;--card:#fff;--line:#d3dae4;--acc:#0e7c86;--accd:#0a5d65}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic",Tahoma,Arial,sans-serif;line-height:1.7}
+header{background:var(--ink);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header h1{margin:0;font-size:1.25rem}
+header p{margin:0;font-size:.85rem;opacity:.75}
+.tabs{display:flex;gap:6px}
+.tabs button{border:1px solid #ffffff55;background:transparent;color:#fff;padding:8px 16px;border-radius:8px;font:inherit;cursor:pointer}
+body[data-tab=cv] .tabs [data-tab=cv],body[data-tab=letter] .tabs [data-tab=letter]{background:#fff;color:var(--ink);font-weight:700}
+main{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:20px;padding:20px;max-width:1280px;margin:auto}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;align-self:start}
+.panel h2{font-size:1rem;margin:20px 0 8px;padding-top:14px;border-top:1px solid var(--line)}
+.panel h2:first-child{margin-top:0;padding-top:0;border:0}
+label{display:block;font-size:.82rem;color:var(--mute);margin:8px 0 3px}
+input,textarea,select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font:inherit;color:var(--ink);background:#fff}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+textarea{resize:vertical;min-height:70px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.item{border:1px dashed var(--line);border-radius:8px;padding:10px;margin-bottom:10px}
+.btn{border:0;background:var(--acc);color:#fff;padding:10px 16px;border-radius:8px;font:inherit;font-weight:500;cursor:pointer}
+.btn:hover{background:var(--accd)}
+.btn.sec{background:#fff;color:var(--acc);border:1px solid var(--acc)}
+.btn.sm{padding:5px 10px;font-size:.8rem}
+.btn.del{background:#fff;color:#b3261e;border:1px solid #e6b8b4}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.note{font-size:.8rem;color:var(--mute);margin:8px 0 0}
+.only-cv,.only-letter,.paper{display:none}
+body[data-tab=cv] .only-cv,body[data-tab=letter] .only-letter{display:block}
+body[data-tab=cv] #cvPaper,body[data-tab=letter] #letterPaper{display:block}
+.paper{background:#fff;border:1px solid var(--line);box-shadow:0 2px 14px #16243a14;max-width:794px;margin:auto;padding:44px 48px;min-height:900px;font-size:.95rem;line-height:1.75}
+.ph{color:#9aa4b2}
+/* CV */
+#cvPaper h1{margin:0;font-size:1.9rem;line-height:1.3}
+#cvPaper .role{font-size:1.1rem;color:var(--acc);font-weight:500}
+#cvPaper .ct{font-size:.85rem;color:var(--mute);margin:4px 0 8px}
+#cvPaper h2{font-size:1rem;margin:18px 0 6px;padding-bottom:3px;border-bottom:2px solid var(--ink)}
+#cvPaper p{margin:0}
+#cvPaper .it{margin-bottom:10px}
+#cvPaper .row{display:flex;justify-content:space-between;gap:10px}
+#cvPaper .row span{color:var(--mute);font-size:.85rem;white-space:nowrap}
+#cvPaper .sub{color:var(--mute);font-size:.9rem}
+#cvPaper.modern{border-top:10px solid var(--acc)}
+#cvPaper.modern h1{color:var(--acc)}
+#cvPaper.modern .role{color:var(--ink)}
+#cvPaper.modern h2{border-bottom:0;border-right:4px solid var(--acc);padding:0 8px;background:#eef6f7}
+/* letter */
+#letterPaper .meta{color:var(--mute);font-size:.88rem}
+#letterPaper p{margin:0 0 14px}
+#letterPaper:focus{outline:2px solid var(--acc)}
+@media(max-width:860px){main{grid-template-columns:1fr;padding:12px}.paper{padding:24px 18px;min-height:0}.g2{grid-template-columns:1fr}}
+@media print{
+@page{size:A4;margin:14mm}
+body{background:#fff}header,.panel,.actions,.note-print{display:none!important}
+main{display:block;padding:0}
+.paper{box-shadow:none;border:0;padding:0;max-width:none;min-height:0}
+#cvPaper.modern{border-top-width:6px}
+}
+</style>
+</head>
+<body data-tab="cv">
+<header>
+  <div><h1>سيرتي</h1><p>سيرة ذاتية ورسالة تحفيز بالعربية، جاهزة لأنظمة الفرز</p></div>
+  <nav class="tabs" aria-label="الأقسام">
+    <button data-tab="cv">السيرة الذاتية</button>
+    <button data-tab="letter">رسالة التحفيز</button>
+  </nav>
+</header>
+
+<main>
+<section class="panel" aria-label="النموذج">
+  <h2>بياناتك الأساسية</h2>
+  <label for="f-name">الاسم الكامل</label><input id="f-name" data-f="name" autocomplete="name">
+  <div class="g2">
+    <div><label for="f-email">البريد الإلكتروني</label><input id="f-email" data-f="email" type="email" dir="ltr" autocomplete="email"></div>
+    <div><label for="f-phone">الهاتف</label><input id="f-phone" data-f="phone" type="tel" dir="ltr" autocomplete="tel"></div>
+  </div>
+
+  <div class="only-cv">
+    <div class="g2">
+      <div><label for="f-city">المدينة والدولة</label><input id="f-city" data-f="city"></div>
+      <div><label for="f-link">رابط LinkedIn أو موقع</label><input id="f-link" data-f="link" dir="ltr"></div>
+    </div>
+    <label for="f-title">المسمى الوظيفي</label><input id="f-title" data-f="title" placeholder="مثال: مطوّر واجهات أمامية">
+    <label for="f-style">شكل القالب</label>
+    <select id="f-style" data-f="style"><option value="classic">كلاسيكي (الأكثر أماناً للفرز الآلي)</option><option value="modern">عصري</option></select>
+    <h2>نبذة مهنية</h2>
+    <textarea data-f="summary" placeholder="٢–٣ جمل عن خبرتك وما تتقنه"></textarea>
+    <h2>الخبرات</h2>
+    <div id="expList"></div>
+    <button class="btn sec sm" data-act="add-exp">إضافة خبرة</button>
+    <h2>التعليم</h2>
+    <div id="eduList"></div>
+    <button class="btn sec sm" data-act="add-edu">إضافة مؤهل</button>
+    <h2>المهارات</h2>
+    <textarea data-f="skills" placeholder="افصل بينها بفاصلة: Excel, التواصل, Python"></textarea>
+  </div>
+
+  <div class="only-letter">
+    <h2>نوع الرسالة</h2>
+    <select data-f="L.type" id="f-type"></select>
+    <label for="f-org">الجهة (جامعة، مؤسسة، شركة)</label><input id="f-org" data-f="L.org">
+    <label for="f-target">البرنامج أو المنحة أو الوظيفة</label><input id="f-target" data-f="L.target">
+    <label for="f-field">تخصصك أو مجالك</label><input id="f-field" data-f="L.field">
+    <label for="f-strength">أبرز إنجاز لك</label><textarea data-f="L.strength" id="f-strength" placeholder="مثال: التخرج بتقدير امتياز، أو قيادة مشروع تخرج"></textarea>
+    <label for="f-reason">ما الذي يدفعك للتقديم؟</label><textarea data-f="L.reason" id="f-reason" placeholder="مثال: شغفي بالذكاء الاصطناعي وسمعة القسم البحثية"></textarea>
+    <label for="f-goal">هدفك المستقبلي</label><textarea data-f="L.goal" id="f-goal" placeholder="مثال: تأسيس مشروع يخدم التعليم في مجتمعي"></textarea>
+    <p class="note">ينشئ النموذج النص تلقائياً. يمكنك تعديل الرسالة مباشرة في المعاينة، لكن تغيير أي حقل بعدها يعيد كتابتها.</p>
+  </div>
+  <p class="note">بياناتك تُحفظ في متصفحك فقط ولا تُرسل لأي خادم.</p>
+</section>
+
+<section aria-label="المعاينة">
+  <div class="actions">
+    <button class="btn" data-act="print">حفظ كملف PDF</button>
+    <button class="btn sec only-letter" data-act="copy" style="display:none">نسخ الرسالة</button>
+    <button class="btn del" data-act="reset">مسح كل البيانات</button>
+  </div>
+  <article class="paper" id="cvPaper"></article>
+  <article class="paper" id="letterPaper" contenteditable="true" spellcheck="false"></article>
+</section>
+</main>
+
+<script>
+const KEY="siraty-v1";
+const $=s=>document.querySelector(s);
+const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const blank=()=>({tab:"cv",name:"",email:"",phone:"",city:"",link:"",title:"",summary:"",skills:"",style:"classic",
+  exp:[{}],edu:[{}],L:{type:"uni",org:"",target:"",field:"",strength:"",reason:"",goal:""}});
+let S=blank();
+try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&d.L)S=d}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+
+/* ---- letter templates ---- */
+const T={
+ uni:{label:"قبول جامعي / ماجستير / دكتوراه",subj:v=>`طلب قبول في برنامج ${v.target}`,
+  p:v=>[
+   `أتقدم إليكم بطلب الالتحاق ببرنامج ${v.target} في ${v.org}. لديّ اهتمام عميق بمجال ${v.field}، وقد اخترت جهتكم لما تتميز به من مستوى أكاديمي وبيئة تتوافق مع طموحي.`,
+   `خلال مسيرتي حققت ${v.strength}، وقد علّمني ذلك الانضباط والقدرة على إنجاز المهام بجودة. أما ما يدفعني للتقديم فهو ${v.reason}.`,
+   `أطمح بعد إتمام البرنامج إلى ${v.goal}، وأثق بأن الدراسة لديكم ستمنحني الأدوات اللازمة لتحقيق ذلك. يسعدني تزويدكم بأي مستندات إضافية، وأتطلع إلى فرصة الانضمام إلى مجتمعكم الأكاديمي.`]},
+ sch:{label:"منحة دراسية",subj:v=>`طلب التقدم لمنحة ${v.target}`,
+  p:v=>[
+   `أكتب إليكم للتقدم لمنحة ${v.target} المقدّمة من ${v.org}. أرى أن هذه المنحة ستمكنني من متابعة دراستي في مجال ${v.field} بأفضل صورة ممكنة.`,
+   `من أبرز ما حققته ${v.strength}، وهو يعكس التزامي وجديتي. ودافعي للتقديم هو ${v.reason}.`,
+   `أتعهد بأن أستثمر هذه الفرصة بأقصى طاقتي، وأن أعود بالنفع على مجتمعي من خلال ${v.goal}. أشكركم على وقتكم واهتمامكم بطلبي.`]},
+ job:{label:"وظيفة",subj:v=>`طلب توظيف – ${v.target}`,
+  p:v=>[
+   `يسرّني التقدم لوظيفة ${v.target} لدى ${v.org}. لديّ خبرة واهتمام بمجال ${v.field}، وأعتقد أن مهاراتي تتوافق مع متطلبات هذا الدور.`,
+   `من أبرز إنجازاتي ${v.strength}، وهو ما يثبت قدرتي على تحقيق نتائج ملموسة. وما يجذبني إليكم هو ${v.reason}.`,
+   `أتطلع إلى أن أحقق ${v.goal} ضمن فريقكم. يسعدني إجراء مقابلة في الوقت الذي يناسبكم، وأشكركم على وقتكم.`]},
+ int:{label:"تدريب",subj:v=>`طلب تدريب – ${v.target}`,
+  p:v=>[
+   `أتقدم بطلب التدرب لدى ${v.org} ضمن ${v.target}. أطوّر مهاراتي في مجال ${v.field}، وأبحث عن فرصة لتطبيق ما تعلمته في بيئة عمل حقيقية.`,
+   `من أبرز ما أنجزته ${v.strength}، وأنا متحمس للتعلم والعمل ضمن فريق. أرغب في التدرب لديكم لأن ${v.reason}.`,
+   `هدفي أن أطوّر نفسي لأصل إلى ${v.goal}. أشكركم على وقتكم، وأتطلع إلى فرصة إثبات جدارتي.`]}
+};
+$("#f-type").innerHTML=Object.entries(T).map(([k,t])=>`<option value="${k}">${t.label}</option>`).join("");
+
+/* ---- render ---- */
+const ph=t=>`<span class="ph">${t}</span>`;
+const br=t=>esc(t).replace(/\n/g,"<br>");
+function drawCV(){
+  const c=S, p=$("#cvPaper");
+  p.className="paper "+c.style;
+  const ct=[c.city,c.phone,c.email,c.link].filter(Boolean).map(esc).join(" | ");
+  const items=(arr,a,b,d,e)=>arr.filter(x=>Object.values(x).some(Boolean)).map(x=>
+    `<div class="it"><div class="row"><b>${esc(x[a])}</b><span>${esc(x[d])}</span></div><div class="sub">${esc(x[b])}</div>${x[e]?`<div>${br(x[e])}</div>`:""}</div>`).join("");
+  const ex=items(c.exp,"title","company","period","desc"), ed=items(c.edu,"degree","school","period","note");
+  const sk=c.skills.split(/[,،\n]/).map(s=>s.trim()).filter(Boolean).map(esc).join(" • ");
+  p.innerHTML=`<h1>${c.name?esc(c.name):ph("اسمك الكامل")}</h1>${c.title?`<div class="role">${esc(c.title)}</div>`:""}<div class="ct">${ct||ph("المدينة | الهاتف | البريد")}</div>`
+   +(c.summary?`<h2>نبذة مهنية</h2><p>${br(c.summary)}</p>`:"")
+   +(ex?`<h2>الخبرات</h2>${ex}`:"")+(ed?`<h2>التعليم</h2>${ed}`:"")+(sk?`<h2>المهارات</h2><p>${sk}</p>`:"");
+}
+function drawLetter(){
+  const L=S.L,t=T[L.type]||T.uni;
+  const g=(x,h)=>x&&x.trim()?esc(x.trim()):`[${h}]`;
+  const v={org:g(L.org,"الجهة"),target:g(L.target,"البرنامج"),field:g(L.field,"مجالك"),strength:g(L.strength,"أبرز إنجاز"),reason:g(L.reason,"دافعك"),goal:g(L.goal,"هدفك")};
+  const date=new Date().toLocaleDateString("ar",{year:"numeric",month:"long",day:"numeric"});
+  const contact=[S.phone,S.email].filter(Boolean).map(esc).join(" | ");
+  $("#letterPaper").innerHTML=`<p class="meta">${date}</p><p><b>إلى: ${v.org}</b><br><b>الموضوع: ${t.subj(v)}</b></p><p>تحية طيبة وبعد،</p>`
+   +t.p(v).map(x=>`<p>${x}</p>`).join("")
+   +`<p>وتفضلوا بقبول فائق الاحترام والتقدير،</p><p><b>${g(S.name,"الاسم الكامل")}</b>${contact?`<br>${contact}`:""}</p>`;
+}
+function lists(){
+  const row=(l,i,x,f)=>`<div class="item">${f.map(([k,lab,ta])=>`<label>${lab}</label>${ta?`<textarea data-l="${l}" data-i="${i}" data-k="${k}">${esc(x[k]||"")}</textarea>`:`<input data-l="${l}" data-i="${i}" data-k="${k}" value="${esc(x[k]||"")}">`}`).join("")}<p style="margin:8px 0 0"><button class="btn del sm" data-act="rm" data-l="${l}" data-i="${i}">حذف</button></p></div>`;
+  $("#expList").innerHTML=S.exp.map((x,i)=>row("exp",i,x,[["title","المسمى الوظيفي"],["company","الشركة"],["period","الفترة (٢٠٢٠ – ٢٠٢٣)"],["desc","أهم الإنجازات (سطر لكل إنجاز)",1]])).join("");
+  $("#eduList").innerHTML=S.edu.map((x,i)=>row("edu",i,x,[["degree","الشهادة والتخصص"],["school","الجامعة أو المعهد"],["period","الفترة"],["note","ملاحظة (المعدل، مرتبة الشرف)"]])).join("");
+}
+function syncFields(){
+  document.querySelectorAll("[data-f]").forEach(el=>{
+    const p=el.dataset.f.split("."); el.value=(p.length>1?S[p[0]][p[1]]:S[p[0]])||"";
+  });
+  document.body.dataset.tab=S.tab;
+  document.querySelector('[data-act=copy]').style.display=S.tab==="letter"?"inline-block":"none";
+}
+const redraw=()=>{drawCV();drawLetter();save()};
+
+document.addEventListener("input",e=>{
+  const el=e.target;
+  if(el.dataset.f){const p=el.dataset.f.split(".");p.length>1?S[p[0]][p[1]]=el.value:S[p[0]]=el.value;redraw()}
+  else if(el.dataset.l){S[el.dataset.l][el.dataset.i][el.dataset.k]=el.value;redraw()}
+});
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.dataset.tab){S.tab=b.dataset.tab;syncFields();save();return}
+  switch(b.dataset.act){
+    case"add-exp":S.exp.push({});lists();redraw();break;
+    case"add-edu":S.edu.push({});lists();redraw();break;
+    case"rm":S[b.dataset.l].splice(+b.dataset.i,1);if(!S[b.dataset.l].length)S[b.dataset.l].push({});lists();redraw();break;
+    case"print":window.print();break;
+    case"copy":navigator.clipboard.writeText($("#letterPaper").innerText).then(()=>{b.textContent="تم النسخ";setTimeout(()=>b.textContent="نسخ الرسالة",1500)}).catch(()=>{});break;
+    case"reset":if(confirm("سيتم مسح كل بياناتك من هذا المتصفح. متابعة؟")){S=blank();lists();syncFields();redraw()}break;
+  }
+});
+lists();syncFields();drawCV();drawLetter();
+</script>
+</body>
+</html>
